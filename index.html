@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Helcim Payment</title>
   <script type="text/javascript" src="https://secure.myhelcim.com/js/version2.js"></script>
   <style>
@@ -27,6 +27,7 @@
       color: white;
       border: none;
       margin-top: 20px;
+      padding: 10px;
       cursor: pointer;
     }
     #helcimResults {
@@ -37,19 +38,20 @@
 </head>
 <body>
 
-  <h2>Pay with Card</h2>
+  <h2>Pay with Credit or Debit Card</h2>
 
   <form name="helcimForm" id="helcimForm" action="thankyou.html" method="POST">
     
+    <!-- Results will show here -->
     <div id="helcimResults"></div>
 
-    <!-- Required Token -->
+    <!-- Token (Replace this with your real token from Helcim) -->
     <input type="hidden" id="token" value="81e0899d31564be5b6ddae">
     
-    <!-- Test Mode (optional, based on config) -->
+    <!-- Test mode -->
     <input type="hidden" id="test" value="1">
 
-    <!-- Card Info -->
+    <!-- Card Details -->
     <label for="cardNumber">Card Number</label>
     <input type="text" id="cardNumber" placeholder="4111 1111 1111 1111">
 
@@ -62,7 +64,7 @@
     <label for="cardCVV">CVV</label>
     <input type="text" id="cardCVV" placeholder="123">
 
-    <!-- Optional Billing Info -->
+    <!-- Billing Info (Optional but recommended) -->
     <label for="cardHolderName">Card Holder Name</label>
     <input type="text" id="cardHolderName" placeholder="John Doe">
 
@@ -76,7 +78,7 @@
     <label for="amount">Amount (USD)</label>
     <input type="text" id="amount" value="10.00">
 
-    <!-- Submit Button -->
+    <!-- Pay Button -->
     <input type="button" id="buttonProcess" value="Pay Now" onclick="javascript:helcimProcess();">
 
   </form>
